@@ -40,7 +40,7 @@ def main_menu
 		num1 = gets.strip.to_f
 	
 		puts ""
-		puts "Enter Modifier (c: clear, e: exit)"
+		puts "Enter Operator (c: clear, e: exit)"
 		print "> "
 		mod = gets.strip.downcase
 			if mod == 'c'
