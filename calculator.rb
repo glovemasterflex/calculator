@@ -12,10 +12,10 @@ def mult(num1, num2)
 end
 
 def divide(num1, num2)
-	num2 / num1
+	num1 / num2
 end
 
-def stuff(num1, num2, mod)
+def calculation(num1, num2, mod)
 	if ['+', 'add', 'plus'].include?(mod)
 		answer = add(num1, num2)
 	elsif ["-", "minus", "subtract"].include?(mod)
@@ -24,7 +24,7 @@ def stuff(num1, num2, mod)
 		answer = mult(num1, num2)
 	elsif ["/", "divide", "divided by"].include?(mod)
 		answer = divide(num1, num2)
-	else 
+	else
 		puts "You done f*cked up."
 		exit
 	end
@@ -40,10 +40,12 @@ def main_menu
 		num1 = gets.strip.to_f
 	
 		puts ""
-		puts "Enter Modifier (e: exit)"
+		puts "Enter Modifier (c: clear, e: exit)"
 		print "> "
 		mod = gets.strip.downcase
-			if mod == 'e'
+			if mod == 'c'
+				redo
+			elsif mod == 'e'
 				exit
 			end
 			
@@ -53,7 +55,7 @@ def main_menu
 		num2 = gets.strip.to_f
 
 		while(true)
-			num1 = stuff(num1, num2, mod)
+			num1 = calculation(num1, num2, mod)
 			puts num1
 			puts "Enter Modifier (c: clear, e: exit)"
 			mod = gets.strip.downcase
